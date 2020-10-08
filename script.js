@@ -18,7 +18,7 @@ let randomWord;
 //INITIALIZE SCORE
 let scoreCount = 0;
 //INITIALIZE TIME
-let timeCount = 15;
+let timeCount = 30;
 //INITIAL DIFFICULTY SETTING
 let difficultyValue = localStorage.getItem('difficulty') === null ? 'medium' : localStorage.getItem('difficulty');
 
