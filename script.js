@@ -10,8 +10,108 @@ const form = document.getElementById('form');
 const setting_btn = document.getElementById('setting-btn');
 
 
-const randomWordArray = [];
-const totalRandomWords = 100;
+const randomWordArray = [
+'polyphonously',
+'lugubriousness',
+'chthonic',
+'submergibility',
+'paperlike',
+'anosognosia',
+'mola',
+'gaunt',
+'tranquillized',
+'bizarre',
+'lyophilization',
+'pregastrular',
+'vaporific',
+'subdiscoid',
+'cog',
+'converge',
+'kepi',
+'sharpy',
+'chita',
+'boethius',
+'gambrinus',
+'exothermically',
+'eruptiveness',
+'deadpan',
+'drainageway',
+'unmixed',
+'cloddy',
+'gayness',
+'wavy',
+'headiest',
+'basilisk',
+'adina',
+'concordantly',
+'intertwiningly',
+'the',
+'jocund',
+'androecial',
+'ganglia',
+'brcs',
+'costoclavicular',
+'duodenal',
+'seminarrative',
+'inhabitant',
+'pharmacopoeia',
+'galvanotropism',
+'socialize',
+'eminence',
+'anuses',
+'candelabrum',
+'misenus',
+'nonperformer',
+'unidirectional',
+'mademoiselles',
+'sayonara',
+'handloader',
+'mapes',
+'semibureaucratic',
+'momentary',
+'alvino',
+'myrtle',
+'uneating',
+'socialized',
+'semihumanistic',
+'apogeal',
+'isochronized',
+'overlive',
+'nonproportional',
+'chapeled',
+'cunjevoi',
+'kindly',
+'synopsize',
+'metope',
+'intermalleolar',
+'power',
+'isotactic',
+'unjostled',
+'rowdily',
+'ensorcel',
+'unrefusing',
+'patripassianly',
+'geminately',
+'nonemulation',
+'verminate',
+'transvaluing',
+'scrubber',
+'outclerk',
+'holiday',
+'nantes',
+'eichmann',
+'goofily',
+'bureaucratism',
+'witlessly',
+'phleboid',
+'smoko',
+'leftist',
+'gobstopper',
+'noncorrupter',
+'pancarditis',
+'midfield',
+'encarnalize'];
+// const totalRandomWords = 10;
 
 //INITIALIZE RANDOM WORD
 let randomWord;
@@ -33,27 +133,34 @@ const timeCounter = setInterval(updateTime, 1000);
 
 
 //FUNCTION TO FETCH RANDOM WORD AND PUSH TO THE ARRAY AND UPDATE THE DOM
-async function fetchRandomWord(){    
-		const res =  await fetch (`https://random-word-api.herokuapp.com/word?number=${totalRandomWords}`)
-		const random = await res.json();
+// async function fetchRandomWord(){    
+// 		const res =  await fetch (`https://random-words-api.herokuapp.com/w?n=5`)
+// 		const random = await res.json();
+// 		console.log(res);
+// 		console.log(random);
 
-		 random.forEach(data => {
-		 	randomWordArray.push(data);
-		 })
-		 updateDOM();
-}
-fetchRandomWord();
+// 		 random.forEach(data => {
+// 		 	console.log(data)
+// 		 	randomWordArray.push(data);
+// 		 })
+// 		 updateDOM();
+// }
+// fetchRandomWord();
+
 
 // TO GENERATE RANDOM WORD  
 function generateRandomWord(){
 	return randomWordArray[Math.floor(Math.random() * randomWordArray.length)];
+
 }
 
 //UPDATING THE DOM
 function updateDOM(){
 		 randomWord = generateRandomWord();
+		 // console.log(randomWord);
 		 word.innerHTML = randomWord;
 }
+updateDOM();
 
 //UPDATING SCORE FUNCTION AND UPDATING THE DOM
 function updateScore(){
